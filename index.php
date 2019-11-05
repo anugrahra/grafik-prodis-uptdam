@@ -40,6 +40,7 @@
               <th scope="col">Bulan</th>
               <th scope="col">Produksi</th>
               <th scope="col">Distribusi</th>
+              <th scope="col">Pemair</th>
             </tr>
           </thead>
           <tbody>
@@ -49,6 +50,7 @@
               <td><?=$prodis['bulan'];?></td>
               <td><?=$prodis['jml_produksi'];?></td>
               <td><?=$prodis['jml_distribusi'];?></td>
+              <td><?=$prodis['jml_pemair'];?></td>
             </tr>
           <?php endwhile;?>
           </tbody>
@@ -68,7 +70,7 @@
       var grafikProdis = new Chart(ctx, {
           type: 'line',
           data: {
-              labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September'],
+              labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober'],
               datasets:
                 [
                   {
@@ -82,10 +84,12 @@
                       <?=jumlah_produksi_per_bulan("Juni");?>,
                       <?=jumlah_produksi_per_bulan("Juli");?>,
                       <?=jumlah_produksi_per_bulan("Agustus");?>,
-                      <?=jumlah_produksi_per_bulan("September");?>
+                      <?=jumlah_produksi_per_bulan("September");?>,
+                      <?=jumlah_produksi_per_bulan("Oktober");?>
                     ],
                     backgroundColor: 'rgba(0, 0, 0, 0)',
                     borderColor: [
+                      'rgba(232, 126, 4, 1)',
                       'rgba(232, 126, 4, 1)',
                       'rgba(232, 126, 4, 1)',
                       'rgba(232, 126, 4, 1)',
@@ -105,9 +109,11 @@
                       'rgba(232, 126, 4, 1)',
                       'rgba(232, 126, 4, 1)',
                       'rgba(232, 126, 4, 1)',
+                      'rgba(232, 126, 4, 1)',
                       'rgba(232, 126, 4, 1)'
                     ],
                     pointBackgroundColor: [
+                      'rgba(232, 126, 4, 1)',
                       'rgba(232, 126, 4, 1)',
                       'rgba(232, 126, 4, 1)',
                       'rgba(232, 126, 4, 1)',
@@ -131,10 +137,12 @@
                       <?=jumlah_distribusi_per_bulan("Juni");?>,
                       <?=jumlah_distribusi_per_bulan("Juli");?>,
                       <?=jumlah_distribusi_per_bulan("Agustus");?>,
-                      <?=jumlah_distribusi_per_bulan("September");?>
+                      <?=jumlah_distribusi_per_bulan("September");?>,
+                      <?=jumlah_distribusi_per_bulan("Oktober");?>
                     ],
                     backgroundColor: 'rgba(0, 0, 0, 0)',
                     borderColor: [
+                      'rgba(44, 130, 201, 1)',
                       'rgba(44, 130, 201, 1)',
                       'rgba(44, 130, 201, 1)',
                       'rgba(44, 130, 201, 1)',
@@ -154,6 +162,7 @@
                       'rgba(44, 130, 201, 1)',
                       'rgba(44, 130, 201, 1)',
                       'rgba(44, 130, 201, 1)',
+                      'rgba(44, 130, 201, 1)',
                       'rgba(44, 130, 201, 1)'
                     ],
                     pointBackgroundColor: [
@@ -165,7 +174,61 @@
                       'rgba(44, 130, 201, 1)',
                       'rgba(44, 130, 201, 1)',
                       'rgba(44, 130, 201, 1)',
+                      'rgba(44, 130, 201, 1)',
                       'rgba(44, 130, 201, 1)'
+                    ],
+                    borderWidth: 3
+                  },
+                  {
+                    label: 'Pemair',
+                    data: [
+                      <?=jumlah_pemair_per_bulan("Januari");?>,
+                      <?=jumlah_pemair_per_bulan("Februari");?>,
+                      <?=jumlah_pemair_per_bulan("Maret");?>,
+                      <?=jumlah_pemair_per_bulan("April");?>,
+                      <?=jumlah_pemair_per_bulan("Mei");?>,
+                      <?=jumlah_pemair_per_bulan("Juni");?>,
+                      <?=jumlah_pemair_per_bulan("Juli");?>,
+                      <?=jumlah_pemair_per_bulan("Agustus");?>,
+                      <?=jumlah_pemair_per_bulan("September");?>,
+                      <?=jumlah_pemair_per_bulan("Oktober");?>
+                    ],
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                    borderColor: [
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)'
+                    ],
+                    pointBorderColor: [
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)'
+                    ],
+                    pointBackgroundColor: [
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)',
+                      'rgba(0, 128, 0, 1)'
                     ],
                     borderWidth: 3
                   }
